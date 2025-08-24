@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+    background-color: #212121;
+    color: #fff;
+}
+
+.container{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.clock{
+    height: 40px;
+    width: 110px;
+    background-color: rgb(249, 121, 66);
+    border-radius: 5px;
+    margin-top: 10px;
+    padding: 12px;
+
+}
