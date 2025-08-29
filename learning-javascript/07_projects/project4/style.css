@@ -1,0 +1,67 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+    background-color: #212121;
+    color: #fff;
+}
+
+.container{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    
+}
+
+.para-div{
+    margin-bottom: 100px;
+    line-height: 1.5;
+}
+
+form {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+label {
+  display: block;
+  margin-left: 12.5%;
+  margin-bottom: 40px;
+  font-size: 40px;
+  color: #fff;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  outline: none;
+}
+
+input[type="submit"]{
+    width: 50%;
+    padding: 10px;
+    font-size: 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-left: 25%;
+    outline: none;
+}
+
+.resultParas{
+    font-size: 20px;
+    padding-top: 10px;
+}
+
+.guesses{
+     background-color: #dc2626;
+}

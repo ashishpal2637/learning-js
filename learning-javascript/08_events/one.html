@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Events</title>
+</head>
+<body style="background-color: #414141; color: #fff;">
+    <h2>Amazing images</h2>
+    <div>
+        <ul id="images">
+            <li>
+                <img width="200px" id="photoshop" src="https://images.pexels.com/photos/18071152/pexels-photo-18071152.jpeg" alt="photoshop">
+            </li>
+            <li>
+                <img width="200px" id="building" src="https://images.pexels.com/photos/33516862/pexels-photo-33516862.jpeg" alt="">
+            </li>
+            <li>
+                <img width="200px" id="beech" src="https://images.pexels.com/photos/33329271/pexels-photo-33329271.jpeg" alt="">
+            </li>
+            <li>
+                <img width="200px" id="girl" src="https://images.pexels.com/photos/33527117/pexels-photo-33527117.jpeg" alt="">
+            </li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    // javascript main events sequentially run hote hai
+    // javascript ek sequentially run language hai 
+    // In javascript events are actions that happen in the system are programming, which the tells your code about so it can react. for example, a user clicking a button, a page finishing or a video starting to play are all events
+   
+    // document.getElementById('girl').onclick = () =>{
+    //     alert("clicked on girl photo")
+    // }  // is approch main kam features hain
+
+
+    // attachEvent()
+    // jQuery - on
+
+     //type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget,
+    // clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keyCode
+
+    // EventPropagation
+    // Any Element or script track inside to outside that is evetpropagation and this is called bobling
+    // capturing Mode : - In this element track outside to inside  
+    // document.getElementById('images').addEventListener('click', (e)=>{
+    //     console.log("clicked inside the ul");
+    // }, false)   // defaule is false
+    // document.getElementById('girl').addEventListener('click', (e) => {
+    //    console.log("clicked on girl pic");
+    //     // e.stopPropagation()  // is method ka use karne se bobling nahi hoti hai
+    // }, false)  // default is false
+   
+    // document.getElementById('google').addEventListener("click", (e) => {
+    //     e.preventDefault();
+    //     e.stopPropagation();
+    //     console.log("clicked on google");
+      
+    // }, false)
+
+    document.querySelector('#images').addEventListener('click', function(e) {
+        // console.log(e.target.parentNode);
+        console.log(e.target.tagName);
+        if(e.target.tagName === 'IMG') {
+        console.log(e.target.id);
+        
+        let removeIt = e.target.parentNode
+         removeIt.remove()
+        }
+        
+        
+        // removeIt.parentNode>removeChilde(removeIt)        
+    },false)
+
+
+    
+
+</script>
+</html>
