@@ -1,67 +1,103 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Reset some default browser styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
-html, body{
-    height: 100%;
-    width: 100%;
-    background-color: #212121;
-    color: #fff;
+body {
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
-.container{
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    
+#wrapper {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px 40px;
+  border-radius: 20px;
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  width: 400px;
+  /* backdrop-filter: blur(10px); */
 }
 
-.para-div{
-    margin-bottom: 100px;
-    line-height: 1.5;
+h1 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  color: #ffd700;
 }
 
-form {
+p {
   margin-bottom: 20px;
-  text-align: left;
+  line-height: 1.5;
 }
 
 label {
+  font-size: 16px;
+  margin-bottom: 8px;
   display: block;
-  margin-left: 12.5%;
-  margin-bottom: 40px;
-  font-size: 40px;
-  color: #fff;
 }
 
-input[type="text"] {
+input.usernum {
+  padding: 12px 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 12px;
   width: 100%;
-  padding: 10px;
-  font-size: 14px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  margin-bottom: 12px;
+  margin-bottom: 15px;
   outline: none;
+  /* transition: 0.3s ease; */
 }
 
-input[type="submit"]{
-    width: 50%;
-    padding: 10px;
-    font-size: 20px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    margin-left: 25%;
-    outline: none;
+input.usernum:focus {
+  border: 2px solid #ffd700;
+  box-shadow: 0px 0px 8px #ffd700;
 }
 
-.resultParas{
-    font-size: 20px;
-    padding-top: 10px;
+.submit-btn {
+  padding: 12px 25px;
+  font-size: 16px;
+  font-weight: bold;
+  background: #ffd700;
+  color: #333;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s ease;
 }
 
-.guesses{
-     background-color: #dc2626;
+.submit-btn:hover {
+  background: #ffea61;
+  transform: translateY(-2px);
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.gameDeta {
+  margin-top: 25px;
+  padding: 15px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.gameDeta p {
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+.previousGuesss,
+.guessremain {
+  font-size: 22px;
+  color: #00ffcc;
+}
+
+.instruction {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #ff6f61;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }

@@ -1,78 +1,40 @@
-const randomNumber = (parseInt(Math.random() * 100 + 1));
-
-const submit = document.querySelector('#subt');
-const userInput = document.querySelector('#guessfield');
-const guessSlot = document.querySelector('.guesses');
-const remaining = document.querySelector('.lastResult');
-const lowOrHi = document.querySelector('.lowOrHi');
-const startOver = document.querySelector('.resultParas');
-
-const p = document.createElement('p');
+let correctnum = parseInt(Math.random()*100+1)
+console.log(correctnum);
+let form = document.querySelector('form')
+let usernum;
+let previousGuess;
+let preg = document.querySelector('.previousGuesss')
+let count = 10;
+ let guessremain=document.querySelector('.guessremain')
 
 
-let prevGuess = [];
-let numGuess = 1;
+ form.addEventListener('submit',function(e){
+    e.preventDefault()
+    usernum= document.querySelector('.usernum');
+    previousGuess = usernum.value;
+    preg.textContent = `${usernum.value}`
+    count--
+    guessremain.innerHTML=`${count}`
+    
+     if(usernum.value==correctnum){
+        let instruction= document.querySelector('.instruction')
+         instruction.innerHTML= `${"you win"}`
+    }else if(usernum.value < correctnum){
+        let instruction= document.querySelector('.instruction')
+         instruction.innerHTML= `${"please enter above number "}`
+        // console.log("r");
 
-let playGame = true;
-
-if(playGame){
-    submit.addEventListener('click', (e)=>{
-        e.preventDefault()
-        const guess = parseInt(userInput.value)
-        console.log(guess)
-        validateGuess(guess)
-    });
-}
-
-//validateGuess method ye validation karega ka value 1 se 100 ke bich main hai ya nahi
-validateGuess = (guess)=>{
-    if(isNaN(guess)){
-        alert('Please enter a valid number')
-    } else if(guess < 1){
-        alert('Please enter a number more than 1')
-    } else if(guess > 100){
-        alert('Please enter a number less than 100')
-    } else {
-        prevGuess.push(guess)
-        if(numGuess === 11){
-            displayGuess(guess)
-            displayMessage(`Game Over. Random number was ${randomNumber}`)
-            endGame()
-        } else {
-            displayGuess(guess)
-            checkGuess(guess)
-        }
+    }else if(usernum.value > correctnum){
+        let instruction= document.querySelector('.instruction')
+        instruction.innerHTML= `${"please enter below num "}`
+        // console.log("");
+        
     }
-}
 
-// checkGuess method ye check krega ki value random no. k equale to nahi hai agar hai to displayMessage method ka use kar k btayega ki aap jit gye 
-checkGuess = (guess) =>{
-    if(guess === randomNumber){
-        displayMessage(`You guessed it right`)
-        endGame()
-    } else if(guess < randomNumber){
-        displayMessage(`Number is TOO Low`)
-    } else if(guess > randomNumber){
-        displayMessage(`Number is TOO High`)
+    if(count == 0) {
+        document.querySelector('.submit-btn').disabled = true;
+        
     }
-}
 
-// ye values ko clean krega kyuki next value input karni hai jitne guess hai or remaining guess hai unhe update krega
-cleanUpGuess = (guess) => {
-    userInput.value = ''
-    guessSlot.innerHTML += `${guess}`
-    numGuess++;
-    remaining.innerHTML = `${11 - numGuess}`
-}
-
-displayMessage = (message) =>{
-    lowOrHi.innerHTML = `<h2>${message}</h2>`
-}
-
-newGame = () =>{
-    //
-}
-
-endGame = () =>{
-    //
-}
+    usernum.value = ''  
+ })

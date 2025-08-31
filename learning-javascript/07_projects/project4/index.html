@@ -7,23 +7,27 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-    <div class="para-div">
-     <h1>Number guessing game</h1>  
-     <p>Try and guess a random number between 1 and 100</p> 
-     <p>You have 10 attempts to guess the right number</p>
-     </div>
-     <form class="form">
-        <label for="guessfield" class="guess">Guess a Number</label>
-        <input type="text" id="guessfield" class="guessfield">
-        <input type="submit" id="subt" value="Submit Guess" class="guessSubmit">
-     </form>
-     <div class="resultParas">
-        <p>Previous Guesses: <span class="guesses"></span></p>
-        <p>Guess Remaining: <span class="lastResult">10</span></p>
-        <p class="lowOrHi"></p>
-     </div>
+    <div id="wrapper">
+        <h1>Number Guesses Game</h1>
+        <p>Try and guess a random number between 1 and 100.
+
+You have 10 attempts to guess the right number.</p>
+<form >
+    <label for="text" > Guess a number</label>
+    <input type="text" class="usernum"> <br>
+    <input class="submit-btn" type="submit">
+
+</form>
+
+    <div class="gameDeta">
+        <p>previous guesses : 
+            <h1 class="previousGuesss"></h1>
+        </p>
+        <p>Guesses Remaining: <h1 class="guessremain"></h1> </p>
     </div>
-    <script src="script.js"></script>
+    <h2 class="instruction"></h2>
+
+    </div>
 </body>
+<script src="script.js"></script>
 </html>
