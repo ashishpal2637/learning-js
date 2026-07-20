@@ -62,7 +62,10 @@
 // }
 
 
-/* TDZ  (Temporal Dead Zone) -- The Temporal Dead Zone (TDZ) is a behavior in JavaScript where variables declared with let and const exist but cannot be accessed before their declaration is reached during execution. Attempting to do so throws a ReferenceError.*/
+/* TDZ  (Temporal Dead Zone) -- The Temporal Dead Zone (TDZ) is a behavior in JavaScript
+ where variables declared with let and const exist but cannot be accessed before 
+ their declaration is reached during execution. Attempting to do so throws
+  a ReferenceError.*/
 
 // console.log(a);
 
